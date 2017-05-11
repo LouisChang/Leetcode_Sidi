@@ -1,0 +1,13 @@
+val a  =3;
+val a  =3
+scalaVersion
+scala
+var a = 2;
+a=2
+a=2;
+scalaVersion
+scala
+object HelloWorld {
+  def main(args: Array[String]): Unit = {
+    println("Hello, world!")
+  }
