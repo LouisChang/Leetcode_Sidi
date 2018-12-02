@@ -36,3 +36,15 @@ class Solution(object):
                 final_res.append(res.join(''))
                 
         return len(set(final_res))
+
+	"""
+        : method with Python internal package
+        """
+        res = set()
+        for email in emails:
+            localname, domain = email.split('@')
+            localname = localname.replace('.', '')
+            if '+' in localname:
+                localname = localname[:localname.index('+')]
+            # print localname
+            res.add(localname + '@' + domain)
