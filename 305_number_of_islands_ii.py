@@ -1,6 +1,8 @@
 class DSU:
     def __init__(self):
         self.parents = {}
+        self.rank = {}
+        # self.size = {}
         self.count = 0
         
     def find(self, x):
@@ -14,10 +16,18 @@ class DSU:
             return
         else:
             self.count -= 1
+            if self.rank[parent_x] < self.rank[parent_y]:
+                parent_x, parent_y = parent_y, parent_x
             self.parents[parent_y] = parent_x
+            
+            if self.rank[parent_x] == self.rank[parent_y]:
+                self.rank[parent_x] += 1
+                
     
     def setParent(self, x):
         self.parents[x] = x
+        self.rank[x] = 0
+        # self.size[x] = 1
         self.count += 1
 
 class Solution(object):
